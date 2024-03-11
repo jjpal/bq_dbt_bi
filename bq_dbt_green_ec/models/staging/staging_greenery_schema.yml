@@ -1,0 +1,250 @@
+version: 2
+
+models:
+  - name: stg_greenery__users    
+    description: staging users table
+    columns: 
+      - name: user_guid
+        description: UID for each unique user
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: first name of user
+        tests:
+          - unique
+          - not_null
+      - name: last_name 
+        description: last name of user
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: email address of user
+        tests:
+          - unique
+          - not_null
+      - name: phone_number
+        description: phone number of user
+        tests:
+          - unique
+          - not_null
+      - name: users_created_at_utc
+        description: timestamp the user was created
+        tests:
+          - unique
+          - not_null              
+      - name: updated_at_utc
+        description: timestamp the user was last updated
+        tests:
+          - unique
+          - not_null
+      - name: address_guid
+        description: default delivery address for the user
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_greenery__addresses    
+    description: staging user address table
+    columns: 
+      - name: address_quid
+        description: UID for each unique address
+        tests:
+          - unique
+          - not_null                                                                                         
+      - name: address
+        description: The first few lines of the address
+        tests:
+          - unique
+          - not_null
+      - name: zipcode
+        description: The zipcode of the address
+        tests:
+          - unique
+          - not_null
+      - name: state
+        description: state this delivery address is based in
+        tests:
+          - unique
+          - not_null
+      - name: country 
+        description: country this delivery address is based in
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_greenery__events
+    description: staging events table
+    columns: 
+      - name: event_guid 
+        description: UUID of each unique event on the platform
+        tests:
+          - unique
+          - not_null
+      - name: session_guid
+        description: UUID of each browsing session on the platform which can contain many events
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        description: UUID of the user that this event is associated with
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        description: Type of event (add_to_cart, checkout, page_view, package_shipped) in order workflow
+        tests:
+          - unique
+          - not_null	       		  
+      - name: page_url
+        description: URL that the event happened on
+        tests:
+          - unique
+          - not_null	  	
+      - name: events_created_at_utc    
+        description: Timestamp of the event
+        tests:
+          - unique
+          - not_null 	  
+      - name: order_id   
+        description: If the event is specific to an order (mostly used for checkout)
+        tests:
+          - unique
+          - not_null
+      - name: product_id   
+        description: If the event is specific to a product
+        tests:
+          - unique
+          - not_null    	  
+
+  - name: stg_greenery__orders
+    description: staging orders for users which includes shipping, tracking, and promotion
+    columns: 
+      - name: order_guid    
+        description: UUID for each unique order on platform
+        tests:
+          - unique
+          - not_null
+      - name: promo_guid    
+        description: promotional code id for the order, if any was used
+        tests:
+          - unique
+          - not_null
+      - name: user_guid    
+        description: user id of the user that was placed for the order
+        tests:
+          - unique
+          - not_null
+      - name: address_guid    
+        description: UID for each unique address
+        tests:
+          - unique
+          - not_null
+      - name: orders_created_at_utc    
+        description: timestamp the order was created
+        tests:
+          - unique
+          - not_null
+      - name: order_cost    
+        description: Dollar about of the items in the order
+        tests:
+          - unique
+          - not_null                                        	       	    
+      - name: shipping_cost    
+        description: Cost of shipping for the order
+        tests:
+          - unique
+          - not_null
+      - name: order_total    
+        description: Total cost of the order including shipping
+        tests:
+          - unique
+          - not_null
+      - name: tracking_guid    
+        description: Tracking number for the order/package
+        tests:
+          - unique
+          - not_null
+      - name: shipping_service    
+        description: Company that was used for shipping
+        tests:
+          - unique
+          - not_null
+      - name: estimated_delivery_at_utc    
+        description: Estimated date of delivery
+        tests:
+          - unique
+          - not_null                                        	       	    
+      - name: delivered_at_utc
+        description: Actual timestamp of delivery
+        tests:
+          - unique
+          - not_null	
+      - name: order_status
+        description:  Status of the order
+        tests:
+          - unique
+          - not_null	          
+
+  - name: stg_greenery__products
+    description: staging products table 
+    columns:
+      - name: product_guid
+        description: UUID for each unique product on platform
+        tests:
+          - unique
+          - not_null	  
+      - name: product_name
+        description: Name of the product
+        tests:
+          - unique
+          - not_null	  
+      - name: product_price
+        description: Price of the product
+        tests:
+          - unique
+          - not_null
+      - name: product_inventory
+        description: Amount of the inventory we have for this product currently at the shop
+        tests:
+          - unique
+          - not_null          	                      
+
+  - name: stg_greenery__order_items
+    description: staging order items table
+    columns:
+      - name: order_id
+        description: OrderId of this order
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: ProductId of a single item in this order
+        tests:
+          - unique
+          - not_null
+      - name: quantity
+        description: Number of units of the product in this order
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_greenery__promos
+    description: staging promotional campaigns table
+    columns:
+      - name: promo_guid
+        description:  Each unique promocode on platform
+        tests:
+          - unique
+          - not_null
+      - name: discount
+        description: Absolute dollar amount that is given off with the code
+        tests:
+          - unique
+          - not_null
+      - name: promo_status
+        description: Is the promo code active or disabled
+        tests:
+          - unique
+          - not_null
