@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_greenery__users    
+  - name: stg_users    
     description: staging users table
     columns: 
       - name: user_guid
@@ -45,7 +45,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_greenery__addresses    
+  - name: stg_addresses    
     description: staging user address table
     columns: 
       - name: address_quid
@@ -74,7 +74,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_greenery__events
+  - name: stg_events
     description: staging events table
     columns: 
       - name: event_guid 
@@ -118,7 +118,7 @@ models:
           - unique
           - not_null    	  
 
-  - name: stg_greenery__orders
+  - name: stg_orders
     description: staging orders for users which includes shipping, tracking, and promotion
     columns: 
       - name: order_guid    
@@ -187,7 +187,7 @@ models:
           - unique
           - not_null	          
 
-  - name: stg_greenery__products
+  - name: stg_products
     description: staging products table 
     columns:
       - name: product_guid
@@ -211,7 +211,7 @@ models:
           - unique
           - not_null          	                      
 
-  - name: stg_greenery__order_items
+  - name: stg_order_items
     description: staging order items table
     columns:
       - name: order_id
@@ -230,7 +230,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_greenery__promos
+  - name: stg_promos
     description: staging promotional campaigns table
     columns:
       - name: promo_guid
