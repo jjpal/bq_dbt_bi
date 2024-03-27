@@ -1,3 +1,9 @@
+{{
+    config(
+      materialized='table'
+  )
+}}
+
 with src_greenery_events as (
   select * from {{ source('src_greenery','events') }}
 )
