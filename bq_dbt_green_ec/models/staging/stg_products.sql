@@ -4,7 +4,7 @@
     )
 }}
 
-with src_products as (
+with src_greenery_products as (
   select * from {{ source('src_greenery','products') }}
 )
 , renamed as (

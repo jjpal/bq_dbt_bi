@@ -4,7 +4,7 @@
   )
 }}
 
-with src_orders as (
+with src_greenery_orders as (
   select * from {{ source('src_greenery','orders') }}
 )
 , renamed as (
@@ -25,4 +25,4 @@ with src_orders as (
     from src_greenery_orders
 )
 
-select * from renamed_recast
+select * from renamed

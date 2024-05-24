@@ -4,7 +4,7 @@
     )
 }}
 
-with src_address as (
+with src_greenery_addresses as (
     select * from {{ source('src_greenery','addresses')}}
 )
 ,
