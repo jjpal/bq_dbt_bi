@@ -4,7 +4,7 @@
     )
 }}
 
-with src_greenery_products as (
+with src_products as (
   select * from {{ source('src_greenery','products') }}
 )
 , renamed as (
@@ -13,7 +13,7 @@ with src_greenery_products as (
         , name as product_name
         , price as product_price
         , inventory as product_inventory
-    from src_greenery_products
+    from src_products
 )
 
 select * from renamed

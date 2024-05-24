@@ -4,7 +4,7 @@
     )
 }}
 
-with src_greenery_users as (
+with src_users as (
   select * from {{ source('src_greenery','users') }}
 )
 , renamed as (
@@ -17,7 +17,7 @@ with src_greenery_users as (
         , created_at as users_created_at_utc
         , updated_at as updated_at_utc
         , address_id as address_guid 
-    from src_greenery_users
+    from src_users
 )
 
 select * from renamed

@@ -4,7 +4,7 @@
   )
 }}
 
-with src_greenery_events as (
+with src_events as (
   select * from {{ source('src_greenery','events') }}
 )
 , renamed as (
@@ -17,7 +17,7 @@ with src_greenery_events as (
         , created_at as events_created_at_utc
         , order_id as order_guid
         , product_id as product_guid 
-    from src_greenery_events
+    from src_events
 )
 
 select * from renamed
