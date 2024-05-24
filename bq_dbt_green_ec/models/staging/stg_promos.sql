@@ -4,15 +4,15 @@
     )
 }}
 
-with src_greenery_order_items as (
-  select * from {{ source('src_greenery','order_items') }}
+with src_promos as (
+  select * from {{ source('src_greenery','promos') }}
 )
 , renamed as (
     select
-        order_id as order_guid
-        , product_id as product_guid 
-        , quantity 
-    from src_greenery_order_items
+        promo_id as promo_guid
+        , discount
+        , status as promo_status
+    from src_promos
 )
 
 select * from renamed
