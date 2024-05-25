@@ -249,7 +249,7 @@ models:
           - unique
           - not_null
 
- - name: stg_reviews
+  - name: stg_reviews
     description: Staging user reviews table
     columns:
       - name: review_guid
