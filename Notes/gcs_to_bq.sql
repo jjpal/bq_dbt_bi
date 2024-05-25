@@ -42,3 +42,9 @@ FROM FILES (
   format = 'CSV',
   uris = ['gs://analytics_jproj/greenery_datasets/users.csv']
 );
+
+LOAD DATA OVERWRITE greenery.reviews
+FROM FILES (
+  format = 'CSV',
+  uris = ['gs://analytics_jproj/greenery_datasets/reviews.csv']
+);
