@@ -22,4 +22,4 @@ sources:
       - name: products  
       - name: promos
       - name: users
-                          # add data governance and access_control info
+      - name: reviews
