@@ -250,25 +250,25 @@ models:
           - not_null
 
   - name: stg_reviews
-    description: Staging user reviews table
+    description: Staging user survey reviews table
     columns:
       - name: review_guid
-        description: Each unique user review id
+        description: Each unique user survey review id
         tests:
           - unique
           - not_null
       - name: avg_rating
-        description: Average user rating
+        description: Average user survey rating
         tests:
           - unique
           - not_null
       - name: review
-        description: Selected user review
+        description: Selected user survey review
         tests:
           - unique
           - not_null
       - name: review_date
-        description: Date of user review
+        description: Date of user survey review
         tests:
           - unique
           - not_null
