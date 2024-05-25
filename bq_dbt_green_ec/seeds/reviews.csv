@@ -1,4 +1,4 @@
-Review ID,Average_Rating,Review,Review_Date_Time 
+review_id,avg_rating,review,review_date
 REVR1,3,Neutral or Dissatisfied,05/05/21
 REVR2,4,Satisfied,06/15/21
 REVR3,4,Satisfied,08/27/21
