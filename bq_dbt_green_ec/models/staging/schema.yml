@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_users    
-    description: staging users table
+    description: Staging users table
     columns: 
       - name: user_guid
         description: UID for each unique user
@@ -10,43 +10,43 @@ models:
           - unique
           - not_null
       - name: first_name
-        description: first name of user
+        description: User first name
         tests:
           - unique
           - not_null
       - name: last_name 
-        description: last name of user
+        description: User last name
         tests:
           - unique
           - not_null
       - name: email
-        description: email address of user
+        description: User email address
         tests:
           - unique
           - not_null
       - name: phone_number
-        description: phone number of user
+        description: User phone number
         tests:
           - unique
           - not_null
       - name: users_created_at_utc
-        description: timestamp the user was created
+        description: Timestamp the user was created
         tests:
           - unique
           - not_null              
       - name: updated_at_utc
-        description: timestamp the user was last updated
+        description: Timestamp the user was last updated
         tests:
           - unique
           - not_null
       - name: address_guid
-        description: default delivery address for the user
+        description: Default delivery address for the user
         tests:
           - unique
           - not_null
 
   - name: stg_addresses    
-    description: staging user address table
+    description: Staging user address table
     columns: 
       - name: address_quid
         description: UID for each unique address
@@ -64,18 +64,18 @@ models:
           - unique
           - not_null
       - name: state
-        description: state this delivery address is based in
+        description: State this delivery address is based in
         tests:
           - unique
           - not_null
       - name: country 
-        description: country this delivery address is based in
+        description: Country this delivery address is based in
         tests:
           - unique
           - not_null
 
   - name: stg_events
-    description: staging events table
+    description: Staging events table
     columns: 
       - name: event_guid 
         description: UUID of each unique event on the platform
@@ -119,7 +119,7 @@ models:
           - not_null    	  
 
   - name: stg_orders
-    description: staging orders for users which includes shipping, tracking, and promotion
+    description: Staging orders for users which includes shipping, tracking, and promotion
     columns: 
       - name: order_guid    
         description: UUID for each unique order on platform
@@ -127,12 +127,12 @@ models:
           - unique
           - not_null
       - name: promo_guid    
-        description: promotional code id for the order, if any was used
+        description: Promotional code id for the order, if any was used
         tests:
           - unique
           - not_null
       - name: user_guid    
-        description: user id of the user that was placed for the order
+        description: User id of the user that was placed for the order
         tests:
           - unique
           - not_null
@@ -142,7 +142,7 @@ models:
           - unique
           - not_null
       - name: orders_created_at_utc    
-        description: timestamp the order was created
+        description: Timestamp the order was created
         tests:
           - unique
           - not_null
@@ -182,13 +182,13 @@ models:
           - unique
           - not_null	
       - name: order_status
-        description:  Status of the order
+        description: Status of the order
         tests:
           - unique
           - not_null	          
 
   - name: stg_products
-    description: staging products table 
+    description: Staging products table 
     columns:
       - name: product_guid
         description: UUID for each unique product on platform
@@ -212,7 +212,7 @@ models:
           - not_null          	                      
 
   - name: stg_order_items
-    description: staging order items table
+    description: Staging order items table
     columns:
       - name: order_id
         description: OrderId of this order
@@ -231,10 +231,10 @@ models:
           - not_null
 
   - name: stg_promos
-    description: staging promotional campaigns table
+    description: Staging promotional campaigns table
     columns:
       - name: promo_guid
-        description:  Each unique promocode on platform
+        description: Each unique promocode on platform
         tests:
           - unique
           - not_null
@@ -245,6 +245,30 @@ models:
           - not_null
       - name: promo_status
         description: Is the promo code active or disabled
+        tests:
+          - unique
+          - not_null
+
+ - name: stg_reviews
+    description: Staging user reviews table
+    columns:
+      - name: review_guid
+        description: Each unique user review id
+        tests:
+          - unique
+          - not_null
+      - name: avg_rating
+        description: Average user rating
+        tests:
+          - unique
+          - not_null
+      - name: review
+        description: Selected user review
+        tests:
+          - unique
+          - not_null
+      - name: review_date
+        description: Date of user review
         tests:
           - unique
           - not_null
