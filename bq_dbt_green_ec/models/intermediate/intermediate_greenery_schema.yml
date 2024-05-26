@@ -9,12 +9,12 @@ models:
         tests:
           - unique
           - not_null
-      - name: order_count
+      - name: order_count_by_st
         description: order count grouped by state
         tests:
           - unique
           - not_null
-      - name: order_totals
+      - name: order_totals_by_st
         description: order totals by state
         tests:
           - unique
@@ -24,11 +24,12 @@ models:
     description: Contains order item aggregated products
     columns: 
       - name: product_guid 
-        description: Unique product UUID
+        description: unique product UUID
         tests:
           - unique
           - not_null      
       - name: product_ordered
+        description: aggregated sum for quantity for ordered items
         tests:
           - unique
           - not_null                                                     
@@ -52,7 +53,7 @@ models:
     description: Contains orders aggregated and time for delivery
     columns: 
       - name: user_guid
-        description: Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null  
@@ -62,7 +63,7 @@ models:
           - unique
           - not_null  
       - name: time_delivery
-        description: time for shipped orders to be deliver
+        description: time for shipped orders to be delivered
         tests:
           - unique
           - not_null                       
@@ -71,32 +72,32 @@ models:
     description: Contains event sessions aggregation
     columns: 
       - name: session_guid  
-        description: Unique session UUID
+        description: unique session UUID
         tests:
           - unique
           - not_null     
       - name: session_start
-        description: Timestamp of the event session start 
+        description: timestamp of the event session start 
         tests:
           - unique
           - not_null
       - name: session_end
-        description: Timestamp of the event session end
+        description: timestamp of the event session end
         tests:
           - unique
           - not_null          
       - name: user_guid    
-        description: Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null     
       - name: page_views
-        description: aggreated page view event type
+        description: aggreated page view event type 
         tests:
           - unique
           - not_null
       - name: add_to_carts
-        description: aggreated add to cart event type
+        description: aggreated add_to_cart event type 
         tests:
           - unique
           - not_null     
@@ -106,7 +107,7 @@ models:
           - unique
           - not_null                          
       - name: package_ships
-        description: aggreated package shipped event type
+        description: aggreated package shipped event type 
         tests:
           - unique
           - not_null    
@@ -115,17 +116,17 @@ models:
     description: Contains session aggregation for users
     columns: 
       - name: user_guid
-        description: Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null     
       - name: session_guid
-        description: Unique seesion UUID
+        description: unique session UUID
         tests:
           - unique
           - not_null  
       - name: product_guid
-        description: Unique product UUID
+        description: unique product UUID
         tests:
           - unique
           - not_null                     
@@ -154,7 +155,7 @@ models:
     description: Contains user registration timestamp, fullname and how long account has been open
     columns: 
       - name: user_guid
-        description: Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null     
@@ -178,12 +179,12 @@ models:
     description: Contains session aggregation order_status
     columns: 
       - name: user_guid
-        description:  Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null
       - name: order_guid
-        description: Unique order UUID
+        description: unique order UUID
         tests:
           - unique
           - not_null
@@ -209,20 +210,20 @@ models:
           - not_null                 
 
   - name: int_orders_status_agg
-    description: orders aggregated by order status
+    description: Orders aggregated by order status
     columns: 
       - name: order_guid
-        description: Unique order UUID
+        description: unique order UUID
         tests:
           - unique
           - not_null
       - name: user_guid
-        description:  Unique user UUID
+        description: unique user UUID
         tests:
           - unique
           - not_null
       - name: address_guid
-        description:  Unique user UUID
+        description: unique address UUID
         tests:
           - unique
           - not_null         
