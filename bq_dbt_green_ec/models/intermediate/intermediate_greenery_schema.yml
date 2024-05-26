@@ -75,12 +75,12 @@ models:
         tests:
           - unique
           - not_null     
-      - name:  session_start
+      - name: session_start
         description: Timestamp of the event session start 
         tests:
           - unique
           - not_null
-      - name:  session_end
+      - name: session_end
         description: Timestamp of the event session end
         tests:
           - unique
