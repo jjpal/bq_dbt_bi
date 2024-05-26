@@ -257,6 +257,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: user_guid
+        description: Each unique user id that submitted a survey review
+        tests:
+          - unique
+          - not_null    
       - name: avg_rating
         description: Average user survey rating
         tests:
