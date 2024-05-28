@@ -12,7 +12,7 @@ with src_products as (
         product_id as product_guid
         , name as product_name
         , price as product_price
-        , inventory as product_inventory
+        , inventory as product_inventory_amount
     from src_products
 )
 
