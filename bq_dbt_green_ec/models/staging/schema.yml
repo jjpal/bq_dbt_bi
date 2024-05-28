@@ -205,7 +205,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: product_inventory
+      - name: product_inventory_amount
         description: Amount of the inventory we have for this product currently at the shop
         tests:
           - unique
