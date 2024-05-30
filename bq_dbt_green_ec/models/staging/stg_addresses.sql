@@ -11,9 +11,9 @@ with src_addresses as (
 renamed as (
     select
         address_id as address_guid 
-        , address
+        , lower(trim(address))
         , zipcode
-        , state
+        , lower(trim(state))
         , country    
     from src_addresses
 )
