@@ -107,12 +107,12 @@ models:
         tests:
           - unique
           - not_null 	  
-      - name: order_id   
+      - name: order_guid   
         description: If the event is specific to an order (mostly used for checkout)
         tests:
           - unique
           - not_null
-      - name: product_id   
+      - name: product_guid   
         description: If the event is specific to a product
         tests:
           - unique
@@ -214,12 +214,12 @@ models:
   - name: stg_order_items
     description: Staging order items table
     columns:
-      - name: order_id
+      - name: order_guid
         description: OrderId of this order
         tests:
           - unique
           - not_null
-      - name: product_id
+      - name: product_guid
         description: ProductId of a single item in this order
         tests:
           - unique
@@ -262,8 +262,8 @@ models:
         tests:
           - unique
           - not_null    
-      - name: avg_rating
-        description: Average user survey rating
+      - name: rating_review
+        description: User survey rating review
         tests:
           - unique
           - not_null
