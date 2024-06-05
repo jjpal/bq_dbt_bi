@@ -267,7 +267,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: review
+      - name: survey_review
         description: Selected user survey review
         tests:
           - unique
