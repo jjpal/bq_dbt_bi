@@ -9,11 +9,11 @@ with src_reviews as (
 )
 , renamed as (
     select
-        review_id as survey_review_guid
+        review_id as review_guid
         , user_id  as user_guid
         , avg_rating as rating_review
         , review as survey_review
-        , review_date as survey_review_date
+        , review_date as review_date
     from src_reviews
 )
 
