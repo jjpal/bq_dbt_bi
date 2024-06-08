@@ -6,8 +6,12 @@
 
 select 
     user_guid
-    , users_created_at_utc as user_registered_on
-    , coalesce(first_name, '') || ' '|| coalesce(last_name, '') as user_full_name        
+    , coalesce(first_name, '') || ' '|| coalesce(last_name, '') as user_full_name 
+    , email as user_email
+    , phone_number as user_phone_number
+    , address_guid as user_address_guid       
+    , user_created_at_utc as user_registered_on
+    , updated_at_utc
     , timestamp_diff(current_timestamp(), user_registered_on, second) as user_account_age_sec
     , timestamp_diff(current_timestamp(), user_registered_on, minute) as user_account_age_min
     , timestamp_diff(current_timestamp(), user_registered_on, hour) as user_account_age_hr
