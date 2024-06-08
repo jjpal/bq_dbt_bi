@@ -19,4 +19,4 @@ select
     , timestamp_diff(current_timestamp(), user_registered_on, month) as user_account_age_month
     , timestamp_diff(current_timestamp(), user_registered_on, year) as user_account_age_yr  
 from {{ ref('stg_users') }}
-order by user_account_age desc    
+order by user_account_age_yr desc    
