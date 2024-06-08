@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: int_users_registered
-    description: Contains all user columns, fullname and how long account has been open
+  - name: int_users_acct_age
+    description: Contains all user columns, fullname and age of the account by s,m,h,d,y
     columns: 
       - name: user_guid
         description: unique user UUID
@@ -29,7 +29,7 @@ models:
         tests:
           - unique
           - not_null    
-      - name: user_registered_on
+      - name: user_created_at_utc
         description: time when the user created the account
         tests:
           - unique
