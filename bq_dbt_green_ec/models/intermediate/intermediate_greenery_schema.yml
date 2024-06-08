@@ -2,18 +2,13 @@ version: 2
 
 models:
   - name: int_users_registered
-    description: Contains user registration timestamp, fullname and how long account has been open
+    description: Contains all user columns, fullname and how long account has been open
     columns: 
       - name: user_guid
         description: unique user UUID
         tests:
           - unique
           - not_null     
-      - name: user_registered_on
-        description: time when the user created the account
-        tests:
-          - unique
-          - not_null
       - name: user_full_name
         description: fullname for the user
         tests:
@@ -29,18 +24,18 @@ models:
         tests:
           - unique
           - not_null
-      - name: user_created_at_utc
-        description: Timestamp the user was created
+      - name: user_address_guid
+        description: Default delivery address for the user
         tests:
           - unique
-          - not_null              
+          - not_null    
+      - name: user_registered_on
+        description: time when the user created the account
+        tests:
+          - unique
+          - not_null    
       - name: updated_at_utc
         description: Timestamp the user was last updated
-        tests:
-          - unique
-          - not_null
-      - name: address_guid
-        description: Default delivery address for the user
         tests:
           - unique
           - not_null
