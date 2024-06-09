@@ -69,3 +69,38 @@ models:
         tests:
           - unique
           - not_null    
+
+  - name: int_address_st_agg
+    description: Contains adress data and state count
+    columns:
+    - name: address_quid
+        description: UID for each unique address
+        tests:
+          - unique
+          - not_null                                                                                         
+      - name: address
+        description: user address
+        tests:
+          - unique
+          - not_null
+      - name: zipcode
+        description: user zipcode from address
+        tests:
+          - unique
+          - not_null 
+      - name: state
+        description: user state from address
+        tests:
+          - unique
+          - not_null
+      - name: country 
+        description: user country from address
+        tests:
+          - unique
+          - not_null                 
+      - name: state_count
+        description: state aggregated count
+        tests:
+          - unique
+          - not_null
+
