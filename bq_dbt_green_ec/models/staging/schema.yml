@@ -261,7 +261,12 @@ models:
         description: Each unique user id that submitted a survey review
         tests:
           - unique
-          - not_null    
+          - not_null
+      - name: product_guid   
+        description: If the event is specific to a product
+        tests:
+          - unique
+          - not_null    	          
       - name: rating_review
         description: User survey rating review
         tests:
