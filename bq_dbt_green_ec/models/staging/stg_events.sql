@@ -16,7 +16,8 @@ with src_events as (
         , page_url 
         , created_at as events_created_at_utc
         , order_id as order_guid
-        , product_id as product_guid 
+        , product_id as product_guid
+        , current_timestamp() as insertion_timestamp_se
     from src_events
 )
 

@@ -12,6 +12,7 @@ with src_promos as (
         promo_id as promo_guid
         , discount
         , status as promo_status
+        , current_timestamp() as insertion_timestamp_spm
     from src_promos
 )
 

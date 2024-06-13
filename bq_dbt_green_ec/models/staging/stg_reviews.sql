@@ -15,6 +15,7 @@ with src_reviews as (
         , rating as rating_review
         , review as survey_review
         , review_date as review_date
+        , current_timestamp() as insertion_timestamp_sr
     from src_reviews
 )
 
