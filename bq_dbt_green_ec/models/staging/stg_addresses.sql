@@ -14,7 +14,8 @@ renamed as (
         , address
         , zipcode
         , state
-        , country    
+        , country
+        , current_timestamp() as insertion_timestamp_sa
     from src_addresses
 )
 

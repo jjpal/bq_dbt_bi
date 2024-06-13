@@ -16,7 +16,8 @@ with src_users as (
         , phone_number
         , created_at as user_created_at_utc
         , updated_at as updated_at_utc
-        , address_id as address_guid 
+        , address_id as address_guid
+        , current_timestamp() as insertion_timestamp_su
     from src_users
 )
 

@@ -44,6 +44,9 @@ models:
         tests:
           - unique
           - not_null
+      - name: insertion_timestamp_su
+        description: stage users table insertion timestamp from raw source
+
 
   - name: stg_addresses    
     description: Staging user address table
@@ -73,6 +76,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: insertion_timestamp_sa
+        description: stage addresses table insertion timestamp from raw source    
 
   - name: stg_events
     description: Staging events table
@@ -116,7 +121,9 @@ models:
         description: If the event is specific to a product
         tests:
           - unique
-          - not_null    	  
+          - not_null
+      - name: insertion_timestamp_se
+        description: stage events table insertion timestamp from raw source        	  
 
   - name: stg_orders
     description: Staging orders for users which includes shipping, tracking, and promotion
@@ -185,7 +192,9 @@ models:
         description: Status of the order
         tests:
           - unique
-          - not_null	          
+          - not_null
+      - name: insertion_timestamp_so
+        description: stage orders table insertion timestamp from raw source    	          
 
   - name: stg_products
     description: Staging products table 
@@ -209,7 +218,9 @@ models:
         description: Amount of the inventory we have for this product currently at the shop
         tests:
           - unique
-          - not_null          	                      
+          - not_null
+      - name: insertion_timestamp_sp
+        description: stage products table insertion timestamp from raw source              	                      
 
   - name: stg_order_items
     description: Staging order items table
@@ -229,6 +240,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: insertion_timestamp_soi
+        description: stage order items table insertion timestamp from raw source    
 
   - name: stg_promos
     description: Staging promotional campaigns table
@@ -248,6 +261,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: insertion_timestamp_spm
+        description: stage promos table insertion timestamp from raw source    
 
   - name: stg_reviews
     description: Staging user survey reviews table
@@ -282,3 +297,5 @@ models:
         tests:
           - unique
           - not_null
+      - name: insertion_timestamp_sr
+        description: stage reviews table insertion timestamp from raw source    

@@ -13,6 +13,7 @@ with src_products as (
         , lower(trim(name)) as product_name
         , price as product_price
         , inventory as product_inventory_amount
+        , current_timestamp() as insertion_timestamp_sp
     from src_products
 )
 

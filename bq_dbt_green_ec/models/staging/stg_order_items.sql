@@ -11,7 +11,8 @@ with src_order_items as (
     select
         order_id as order_guid
         , product_id as product_guid 
-        , quantity 
+        , quantity
+        , current_timestamp() as insertion_timestamp_soi 
     from src_order_items
 )
 

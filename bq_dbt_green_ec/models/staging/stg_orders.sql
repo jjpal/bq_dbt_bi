@@ -22,6 +22,7 @@ with src_orders as (
         , estimated_delivery_at as estimated_delivery_at_utc
         , delivered_at as delivered_at_utc
         , status as order_status
+        , current_timestamp() as insertion_timestamp_so
     from src_orders
 )
 
