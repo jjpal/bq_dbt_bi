@@ -17,6 +17,7 @@ select
     , timestamp_diff(current_timestamp(), user_created_at_utc, hour) as user_account_age_hr
     , timestamp_diff(current_timestamp(), user_created_at_utc, day) as user_account_age_day
     , timestamp_diff(current_timestamp(), user_created_at_utc, month) as user_account_age_month
-    , timestamp_diff(current_timestamp(), user_created_at_utc, year) as user_account_age_yr  
+    , timestamp_diff(current_timestamp(), user_created_at_utc, year) as user_account_age_yr
+    , current_timestamp() as insertion_timestamp_iu  
 from {{ ref('stg_users') }}
 order by user_account_age_yr desc    
