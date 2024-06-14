@@ -11,6 +11,7 @@ select
     , lower(trim(state)) as state
     , lower(trim(country)) as country
     , count(state) as state_count
+    , current_timestamp() as insertion_timestamp_ia
 from {{ ref('stg_addresses') }}
 group by state
 order by state_count desc
