@@ -68,7 +68,9 @@ models:
         description: time from when user created account up to current time measured in years
         tests:
           - unique
-          - not_null    
+          - not_null
+      - name: insertion_timestamp_iu
+        description: intermediate users_acct_age table insertion timestamp      
 
   - name: int_address_st_agg
     description: Contains address data and state count
@@ -103,4 +105,6 @@ models:
       tests:
         - unique
         - not_null
+    - name: insertion_timestamp_ia
+      description: intermediate address table insertion timestamp    
 
