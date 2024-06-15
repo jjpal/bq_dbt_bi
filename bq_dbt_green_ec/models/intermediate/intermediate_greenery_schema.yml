@@ -108,3 +108,51 @@ models:
     - name: insertion_timestamp_ia
       description: intermediate address table insertion timestamp    
 
+- name: int_events_sessions_agg
+    description: events aggregated sessions, start/end sessions
+    columns:
+    - name: session_guid
+      description: unique session UUID
+      tests:
+        - unique
+        - not_null
+    - name: session_start
+      description: min timestamp when event was created
+      tests:
+        - unique
+        - not_null                     
+    - name: session_end
+      description: max timestamp when event was ended
+      tests:
+        - unique
+        - not_null
+    - name: user_guid
+        description: unique user UUID
+        tests:
+          - unique
+          - not_null     
+      - name: page_views
+        description: aggreated page view event type
+        tests:
+          - unique
+          - not_null
+      - name: add_to_carts
+        description: aggreated add to cart event type
+        tests:
+          - unique
+          - not_null     
+      - name: check_outs
+        description: aggreated checkout event type
+        tests:
+          - unique
+          - not_null                          
+      - name: package_ships
+        description: aggreated package shipped event type
+        tests:
+          - unique
+          - not_null    
+      - name: insertion_timestamp_ies
+        description: intermediate events table insertion timestamp
+        tests:
+          - unique
+          - not_null  
