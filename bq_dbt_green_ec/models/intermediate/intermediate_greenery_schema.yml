@@ -75,59 +75,59 @@ models:
   - name: int_address_st_agg
     description: Contains address data and state count
     columns:
-    - name: address_guid
-      description: unique user address
-      tests:
+      - name: address_guid
+        description: unique user address
+        tests:
         - unique
         - not_null                                                                                         
-    - name: address
-      description: user address
-      tests:
+      - name: address
+        description: user address
+        tests:
         - unique
         - not_null
-    - name: zipcode
-      description: user zipcode from address
-      tests:
+      - name: zipcode
+        description: user zipcode from address
+        tests:
         - unique
         - not_null 
-    - name: state
-      description: user state from address
-      tests:
+      - name: state
+        description: user state from address
+        tests:
         - unique
         - not_null
-    - name: country 
-      description: user country from address
-      tests:
+      - name: country 
+        description: user country from address
+        tests:
         - unique
         - not_null                 
-    - name: state_count
-      description: state aggregated count
-      tests:
+      - name: state_count
+        description: state aggregated count
+        tests:
         - unique
         - not_null
-    - name: insertion_timestamp_ia
-      description: intermediate address table insertion timestamp    
+      - name: insertion_timestamp_ia
+        description: intermediate address table insertion timestamp
 
-- name: int_events_sessions_agg
+  - name: int_events_sessions_agg
     description: events aggregated sessions, start/end sessions
     columns:
-    - name: session_guid
-      description: unique session UUID
-      tests:
+      - name: session_guid
+        description: unique session UUID
+        tests:
         - unique
         - not_null
-    - name: session_start
-      description: min timestamp when event was created
-      tests:
+      - name: session_start
+        description: min timestamp when event was created
+        tests:
         - unique
         - not_null                     
-    - name: session_end
-      description: max timestamp when event was ended
-      tests:
+      - name: session_end
+        description: max timestamp when event was ended
+        tests:
         - unique
         - not_null
-    - name: user_guid
-        description: unique user UUID
+      - name: user_guid
+        description: user UUID
         tests:
           - unique
           - not_null     
