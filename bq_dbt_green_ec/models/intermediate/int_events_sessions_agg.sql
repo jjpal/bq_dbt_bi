@@ -14,5 +14,5 @@ select
     , sum(case when event_type = 'checkout' then 1 else 0 end) as check_outs
     , sum(case when event_type = 'package_shipped' then 1 else 0 end) as package_ships
     , current_timestamp() as insertion_timestamp_ies
-from {{ ref('stg_greenery__events') }}
+from {{ ref('stg_events') }}
 group by 1, 4
