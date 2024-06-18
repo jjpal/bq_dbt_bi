@@ -150,7 +150,17 @@ models:
         description: aggreated package shipped event type
         tests:
           - unique
-          - not_null    
+          - not_null
+      - name: order_guid   
+        description: If the event is specific to an order (mostly used for checkout)
+        tests:
+          - unique
+          - not_null
+      - name: product_guid   
+        description: If the event is specific to a product
+        tests:
+          - unique
+          - not_null        
       - name: insertion_timestamp_ies
         description: intermediate events table insertion timestamp
         tests:
