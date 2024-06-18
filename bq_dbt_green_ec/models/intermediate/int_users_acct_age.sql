@@ -6,7 +6,6 @@
 
 select 
     user_guid
-    --, coalesce(lower(trim(first_name)), '') ||' '|| coalesce(lower(trim(last_name)), '') as user_full_name 
     , coalesce(first_name, '') ||' '|| coalesce(last_name, '') as user_full_name 
     , email as user_email
     , phone_number as user_phone_number
