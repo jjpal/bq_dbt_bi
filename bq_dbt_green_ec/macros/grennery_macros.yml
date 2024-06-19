@@ -1,0 +1,13 @@
+version: 2
+
+macros:
+  - name: time_interval
+    description: time_interval for timestamp values input parameters returns interval type
+    arguments: 
+      - name: timestamp_col1
+        type: timestamp
+        description: first timestamp input
+      - name: timestamp_col2
+        type: timestamp
+        description: second timestamp input
+
