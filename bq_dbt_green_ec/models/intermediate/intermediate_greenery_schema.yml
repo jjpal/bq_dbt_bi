@@ -152,12 +152,12 @@ models:
           - unique
           - not_null
       - name: order_guid   
-        description: If the event is specific to an order (mostly used for checkout)
+        description: if the event is specific to an order (mostly used for checkout)
         tests:
           - unique
           - not_null
       - name: product_guid   
-        description: If the event is specific to a product
+        description: if the event is specific to a product
         tests:
           - unique
           - not_null        
@@ -165,4 +165,40 @@ models:
         description: intermediate events table insertion timestamp
         tests:
           - unique
-          - not_null  
+          - not_null 
+
+  - name: int_reviews
+    description: user survey reviews table
+    columns:
+      - name: review_guid
+        description: each unique user survey review id
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        description: each unique user id that submitted a survey review
+        tests:
+          - unique
+          - not_null
+      - name: product_guid   
+        description: if the event is specific to a product
+        tests:
+          - unique
+          - not_null    	          
+      - name: rating_review
+        description: user survey rating review
+        tests:
+          - unique
+          - not_null
+      - name: survey_review
+        description: selected user survey review
+        tests:
+          - unique
+          - not_null
+      - name: review_date
+        description: date of user survey review
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_ir
+        description: reviews table insertion timestamp from raw source    
