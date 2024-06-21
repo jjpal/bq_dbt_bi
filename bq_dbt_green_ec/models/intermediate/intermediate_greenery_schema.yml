@@ -200,5 +200,16 @@ models:
         tests:
           - unique
           - not_null
+      - name: product_name
+        description: name of the product
+        tests:
+          - unique
+          - not_null	  
+      - name: product_price
+        description: price of the product
+        tests:
+          - unique
+          - not_null    
       - name: insertion_timestamp_ir
-        description: reviews table insertion timestamp from raw source    
+        description: reviews table insertion timestamp from raw source
+        
