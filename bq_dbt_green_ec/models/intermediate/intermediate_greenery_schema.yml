@@ -216,5 +216,30 @@ models:
           - unique
           - not_null    
       - name: insertion_timestamp_ir
-        description: reviews table insertion timestamp from raw source
-        
+        description: reviews table insertion timestamp 
+
+  - name: int_orders_count_avg_time_delivery
+    description: contains orders count, time for delivery, and avg time delivery
+    columns: 
+      - name: user_guid
+        description: user UUID
+        tests:
+          - unique
+          - not_null  
+      - name: order_count
+        description: aggregated order count
+        tests:
+          - unique
+          - not_null
+      - name: avg_delivery_time 
+        description: average time for orders to be delivered
+        tests:
+          - unique
+          - not_null         
+      - name: time_delivery
+        description: time for orders to be delivered
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_ioa
+        description: orders table insertion timestamp
