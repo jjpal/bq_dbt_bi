@@ -151,6 +151,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: event_guid 
+        description: event UUID
+        tests:
+          - unique
+          - not_null    
       - name: order_guid   
         description: if the event is specific to an order (mostly used for checkout)
         tests:
