@@ -15,7 +15,7 @@ select
     , prods.product_price
     , current_timestamp() as insertion_timestamp_ir
 from {{ ref('stg_reviews') }} as revs
-join {{ ref('stg_products') }} as prods
+inner join {{ ref('stg_products') }} as prods
     on revs.product_guid = prods.product_guid
 where product_guid is not null
---group by 1,2,3,4,5,6,7,8
+group by 1,2,3,4,5,6,7,8
