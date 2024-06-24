@@ -243,3 +243,38 @@ models:
           - not_null
       - name: insertion_timestamp_ioa
         description: orders table insertion timestamp
+
+  - name: int_order_items_prod_ord_agg
+    description: Contains order item aggregated products
+    columns:
+      - name: order_guid
+        description: order_items UUID
+        tests:
+          - unique
+          - not_null 
+      - name: product_guid 
+        description: product UUID
+        tests:
+          - unique
+          - not_null      
+      - name: product_ordered
+        tests:
+          - unique
+          - not_null                                                     
+      - name: product_name
+        description: name of product
+        tests:
+          - unique
+          - not_null    
+      - name: product_price
+        description: price for product
+        tests:
+          - unique
+          - not_null            
+      - name: product_inventory
+        description: product inventory on hand
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_ioi
+        description: orders table insertion timestamp    
