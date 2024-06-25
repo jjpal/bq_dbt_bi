@@ -10,8 +10,8 @@ with src_users as (
 , renamed as (
     select
         user_id as user_guid
-        , lower(trim(first_name))
-        , lower(trim(last_name))
+        , lower(trim(first_name)) as first_name
+        , lower(trim(last_name)) as last_name
         , email
         , phone_number
         , created_at as user_created_at_utc
