@@ -1,14 +1,8 @@
 version: 2
 
 sources:
-  - name: src_greenery   # name of the source 
-    schema: public        # this is the schema our raw data lives in   
-    database: dbt         # this is the name of our database
-
-    quoting: 
-      database: false
-      schema: false
-      identifier: false
+  - name: src_greenery    # name of the source 
+    schema: greenery      # this is the schema our raw data lives in   
 
     freshness:
       warn_after: {count: 24, period: hour}
