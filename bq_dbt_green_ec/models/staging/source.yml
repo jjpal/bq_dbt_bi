@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: src_greenery   # name of the source 
+  - name: greenery   # name of the source 
     schema: public        # this is the schema our raw data lives in   
     database: dbt         # this is the name of our database
 
