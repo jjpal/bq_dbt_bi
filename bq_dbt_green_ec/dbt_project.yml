@@ -34,9 +34,13 @@ models:
   bq_dbt_green_ec:
     # Config indicated by + and applies to all files under models/example/
     staging:
+      +enabled: true
       +materialized: view
+      +schema: stg_greenery
     intermediate:
+      +enabled: true
       +materialized: view
+      +schema: int_greenery
     marts:
       +materialized: view
       finance:
