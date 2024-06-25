@@ -47,7 +47,6 @@ models:
       - name: insertion_timestamp_su
         description: stage users table insertion timestamp from raw source
 
-
   - name: stg_addresses    
     description: Staging user address table
     columns: 
