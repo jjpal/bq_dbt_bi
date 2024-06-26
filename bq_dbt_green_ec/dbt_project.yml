@@ -41,11 +41,19 @@ models:
       +enabled: true
       +materialized: view
       +schema: int_greenery
-    marts:
-      +materialized: view
+    marts:      
+      core:
+        +enabled: true
+        +materialized: view
+        +schema: core_greenery
       finance:
-        +schema: finance
+        +enabled: true
+        +materialized: view
+        +schema: finance_greenery
       marketing:
-        +schema: marketing
+        +enabled: true
+        +materialized: view
+        +schema: marketing_greenery
       product:
-        +schema: product
+        +materialized: view
+        +schema: product_greenery
