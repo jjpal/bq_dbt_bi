@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_reviews
+    description: user survey reviews table
+    columns: 
+      - name: review_guid
+        description: each unique user survey review id
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        description: each unique user id that submitted a survey review
+        tests:
+          - unique
+          - not_null
+      - name: product_guid   
+        description: if the event is specific to a product
+        tests:
+          - unique
+          - not_null    	          
+      - name: rating_review
+        description: user survey rating review
+        tests:
+          - unique
+          - not_null
+      - name: survey_review
+        description: selected user survey review
+        tests:
+          - unique
+          - not_null
+      - name: review_date
+        description: date of user survey review
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: name of the product
+        tests:
+          - unique
+          - not_null	  
+      - name: product_price
+        description: price of the product
+        tests:
+          - unique
+          - not_null    
+      - name: insertion_timestamp_cr
+        description: reviews table insertion timestamp     
