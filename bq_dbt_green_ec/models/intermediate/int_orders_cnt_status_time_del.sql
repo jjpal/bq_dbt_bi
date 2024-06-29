@@ -8,7 +8,7 @@
    set order_statuses = dbt_utils.get_query_results_as_dict(
    "select distinct quote_literal(order_status) as order_status
    , order_status as column_name from"
-   ~ ref ('stg_greenery__orders')
+   ~ ref ('stg_orders')
    )
 %}
 
@@ -20,7 +20,7 @@ select
    , orders_created_at_utc
    {%- for order_status in order_statuses['order_status'] %}
    , sum(case when order_status = {{ order_status }} then 1 else 0 end) 
-            as {{ order_statuses['column_name'][loop.index0] }} 
+      as {{ order_statuses['column_name'][loop.index0] }} 
    {%- endfor %} 
    , avg(delivered_at_utc - orders_created_at_utc) as avg_delivery_time 
    , {{ time_interval('delivered_at_utc', 'orders_created_at_utc')}} as time_delivery
