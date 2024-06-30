@@ -80,22 +80,22 @@ models:
         tests:
         - unique
         - not_null                                                                                         
-      - name: address
+      - name: user_address
         description: user address
         tests:
         - unique
         - not_null
-      - name: zipcode
+      - name: user_zipcode
         description: user zipcode from address
         tests:
         - unique
         - not_null 
-      - name: state
+      - name: user_state
         description: user state from address
         tests:
         - unique
         - not_null
-      - name: country 
+      - name: user_country 
         description: user country from address
         tests:
         - unique
