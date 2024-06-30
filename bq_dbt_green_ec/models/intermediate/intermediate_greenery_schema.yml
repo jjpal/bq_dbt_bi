@@ -59,16 +59,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: user_account_age_month
-        description: time from when user created account up to current time measured in months
-        tests:
-          - unique
-          - not_null
-      - name: user_account_age_year
-        description: time from when user created account up to current time measured in years
-        tests:
-          - unique
-          - not_null
       - name: insertion_timestamp_iu
         description: intermediate users_acct_age table insertion timestamp      
 
