@@ -18,4 +18,4 @@ select
     , product_guid
     , current_timestamp() as insertion_timestamp_ies
 from {{ ref('stg_events') }}
-group by 1, 4
+group by 1, 4, 9, 10, 11
