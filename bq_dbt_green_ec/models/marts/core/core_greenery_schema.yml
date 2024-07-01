@@ -45,4 +45,68 @@ models:
           - unique
           - not_null    
       - name: insertion_timestamp_cr
-        description: reviews table insertion timestamp     
+        description: reviews table insertion timestamp 
+
+  - name: dim_users
+    description: users and address models joined to include all personal user info
+    columns: 
+      - name: user_guid
+        description: unique user UID
+        tests:
+          - unique
+          - not_null
+      - name: user_full_name
+        description: user fullname
+        tests:
+          - unique
+          - not_null                                                                
+      - name: user_email
+        description: email address of user
+        tests:
+          - unique
+          - not_null         
+      - name: user_phone_number
+        description: phone number of user
+        tests:
+          - unique
+          - not_null
+      - name: user_registered_on
+        description: date user created the account
+        tests:
+          - unique
+          - not_null               
+      - name: last_update_activity
+        description: timeframe from when user registered up to last updated activity
+        tests:
+          - unique
+          - not_null
+      - name: user_account_age
+        description: timeframe since the user registered to greenery 
+        tests:
+          - unique
+          - not_null                  
+      - name: user_address
+        description: default delivery address for the user 
+        tests:
+          - unique
+          - not_null         
+      - name: user_zip_code
+        description: zipcode of the address
+        tests:
+          - unique
+          - not_null         
+      - name: user_state
+        description: the delivery state address for the user
+        tests:
+          - unique
+          - not_null         
+      - name: user_country
+        description: the delivery country address for the user
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_du
+        description: users table insertion timestamp 
+        tests:
+          - unique
+          - not_null    
