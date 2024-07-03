@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_reviews
-    description: user survey reviews table
+    description: User survey reviews table
     columns: 
       - name: review_guid
         description: each unique user survey review id
@@ -44,11 +44,11 @@ models:
         tests:
           - unique
           - not_null    
-      - name: insertion_timestamp_cr
+      - name: insertion_timestamp_cdr
         description: reviews table insertion timestamp 
 
   - name: dim_users
-    description: users and address models joined to include all personal user info
+    description: Users and address models joined to include all personal user info
     columns: 
       - name: user_guid
         description: unique user UID
@@ -105,8 +105,52 @@ models:
         tests:
           - unique
           - not_null
-      - name: insertion_timestamp_du
+      - name: insertion_timestamp_cdu
         description: users table insertion timestamp 
         tests:
           - unique
           - not_null    
+
+- name: dim_products
+    description: Contains product inventory and last ordered items together from staging model.  
+    columns: 
+      - name: product_guid
+        description: unique product on platform
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: name of the product from staging model
+        tests:
+          - unique
+          - not_null
+      - name: product_price
+        description: price of the product from staging model
+        tests:
+          - unique
+          - not_null
+      - name: product_inventory
+        description: amount of inventory for product available from staging
+        tests:
+          - unique
+          - not_null
+      - name: product_ordered
+        description: number of units currently ordered from staging
+        tests:
+          - unique
+          - not_null
+      - name: session_guid
+        description: unique session on platform
+        tests:
+          - unique
+          - not_null
+      - name: product_url
+        description: product URL page 
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_cdp
+        description: users table insertion timestamp 
+        tests:
+          - unique
+          - not_null                 
