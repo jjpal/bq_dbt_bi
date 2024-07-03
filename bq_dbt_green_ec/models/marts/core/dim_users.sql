@@ -16,7 +16,7 @@ select
     , i_addr.user_zipcode
     , i_addr.user_state
     , i_addr.country as user_country
-    , current_timestamp() as insertion_timestamp_du
+    , current_timestamp() as insertion_timestamp_cdu
 from {{ ref('int_users_acct_age') }} as i_users
 left join {{ ref('int_address_st_agg') }} as i_addr
 on i_users.user_guid = i_addr.address_guid
