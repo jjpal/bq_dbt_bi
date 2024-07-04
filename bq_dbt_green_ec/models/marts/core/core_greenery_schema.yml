@@ -45,7 +45,7 @@ models:
           - unique
           - not_null    
       - name: insertion_timestamp_cdr
-        description: reviews table insertion timestamp 
+        description: reviews dim table insertion timestamp 
 
   - name: dim_users
     description: Users and address models joined to include all personal user info
@@ -106,13 +106,13 @@ models:
           - unique
           - not_null
       - name: insertion_timestamp_cdu
-        description: users table insertion timestamp 
+        description: users dim table insertion timestamp 
         tests:
           - unique
           - not_null    
 
 - name: dim_products
-    description: Contains product inventory and last ordered items together from staging model.  
+    description: Contains product inventory and last ordered items together.  
     columns: 
       - name: product_guid
         description: unique product on platform
@@ -120,22 +120,22 @@ models:
           - unique
           - not_null
       - name: product_name
-        description: name of the product from staging model
+        description: name of the product 
         tests:
           - unique
           - not_null
       - name: product_price
-        description: price of the product from staging model
+        description: price of the product 
         tests:
           - unique
           - not_null
-      - name: product_inventory
-        description: amount of inventory for product available from staging
+      - name: product_inventory_amount
+        description: amount of inventory for product available 
         tests:
           - unique
           - not_null
       - name: product_ordered
-        description: number of units currently ordered from staging
+        description: number of units currently ordered 
         tests:
           - unique
           - not_null
@@ -150,7 +150,47 @@ models:
           - unique
           - not_null
       - name: insertion_timestamp_cdp
-        description: users table insertion timestamp 
+        description: products dim table insertion timestamp 
         tests:
           - unique
-          - not_null                 
+          - not_null
+
+- name: fact_events
+    description: Contains events aggregation with session_grain.  
+    columns: 
+      - name: session_guid
+        description: unique session on platform
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        description: unique UUID for each user on platform
+        tests:
+          - unique
+          - not_null
+      - name: events_count
+        description: event_guid count
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        description: session event type
+        tests:
+          - unique
+          - not_null
+      - name: products_viewed_count
+        description: distinct count of product_guids
+        tests:
+          - unique
+          - not_null     
+      - name: session_orders_count
+        description: distinct count of order_guids
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_cfe
+        description: events fact table insertion timestamp 
+        tests:
+          - unique
+          - not_null
+
