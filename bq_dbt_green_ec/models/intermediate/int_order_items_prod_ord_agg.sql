@@ -7,7 +7,7 @@
 select
     o_items.order_guid
     , o_items.product_guid
-    , o_items.quantity
+    , o_items.quantity as items_ordered
     , prods.product_name    
     , prods.product_price
     , prods.product_inventory_amount
