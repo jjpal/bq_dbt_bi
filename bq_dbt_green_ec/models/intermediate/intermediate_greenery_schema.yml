@@ -221,7 +221,7 @@ models:
         tests:
           - unique
           - not_null      
-      - name: quantity
+      - name: items_ordered
         description: units of the product in this order
         tests:
           - unique
