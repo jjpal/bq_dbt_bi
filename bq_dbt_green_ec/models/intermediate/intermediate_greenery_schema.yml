@@ -221,10 +221,11 @@ models:
         tests:
           - unique
           - not_null      
-      - name: product_ordered
+      - name: quantity
+        description: units of the product in this order
         tests:
           - unique
-          - not_null                                                     
+          - not_null                                              
       - name: product_name
         description: name of product
         tests:
