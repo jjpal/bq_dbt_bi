@@ -111,7 +111,7 @@ models:
           - unique
           - not_null    
 
-- name: dim_products
+  - name: dim_products
     description: Contains product inventory and last ordered items together.  
     columns: 
       - name: product_guid
@@ -134,7 +134,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: product_ordered
+      - name: items_ordered
         description: number of units currently ordered 
         tests:
           - unique
@@ -155,7 +155,7 @@ models:
           - unique
           - not_null
 
-- name: fact_events
+  - name: fact_events
     description: Contains events aggregation with session_grain.  
     columns: 
       - name: session_guid
@@ -194,3 +194,76 @@ models:
           - unique
           - not_null
 
+  - name: fact_orders
+    description: Orders promo order items
+    columns: 
+      - name: order_guid
+        description: unique order on platform
+        tests:
+          - unique
+          - not_null      
+      - name: promo_guid
+        description: promotional code id for the order
+        tests:
+          - unique
+          - not_null         
+      - name: user_guid
+        description: unique user UUID
+        tests:
+          - unique
+          - not_null       
+      - name: order_total
+        description: total cost of the order including shipping
+        tests:
+          - unique
+          - not_null      
+      - name: orders_created_at_utc
+        description: timestamp the order was created 
+        tests:
+          - unique
+          - not_null         
+      - name: tracking_guid
+        description: tracking number for the order/package 
+        tests:
+          - unique
+          - not_null       
+      - name: shipping_service
+        description: company that was used for shipping 
+        tests:
+          - unique
+          - not_null    
+      - name: delivered_at_utc
+        description: actual timestamp of delivery 
+        tests:
+          - unique
+          - not_null    
+      - name: discount
+        description: absolute dollar amount that is given off with the code 
+        tests:
+          - unique
+          - not_null    
+      - name: promo_status
+        description: the promo code that details if active or disabled
+        tests:
+          - unique
+          - not_null    
+      - name: product_guid
+        description: unique product UUID on platform 
+        tests:
+          - unique
+          - not_null    
+      - name: quantity 
+        description: number of units of the product in this order 
+        tests: 
+          - unique
+          - not_null   
+      - name: product_price
+        description: price of the product
+        tests:
+          - unique
+          - not_null
+      - name: product_inventory
+        description: amount of inventory for product available 
+        tests:
+          - unique
+          - not_null       
