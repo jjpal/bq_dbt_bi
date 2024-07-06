@@ -17,6 +17,7 @@ select
     , op.items_ordered                                  
     , op.product_price
     , op.product_inventory
+    , current_timestamp() as insertion_timestamp_cfo
 from {{ ref('stg_orders') }} as ord
 left join {{ ref('int_order_items_prod_ord_agg') }} as op
     on oi.product_guid = op.product_guid

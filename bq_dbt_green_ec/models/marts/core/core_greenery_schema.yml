@@ -266,4 +266,9 @@ models:
         description: amount of inventory for product available 
         tests:
           - unique
-          - not_null       
+          - not_null
+      - name: insertion_timestamp_cfo
+        description: events order table insertion timestamp 
+        tests:
+          - unique
+          - not_null               
