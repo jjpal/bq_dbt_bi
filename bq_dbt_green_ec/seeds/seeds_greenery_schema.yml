@@ -1,0 +1,55 @@
+version: 2
+
+seeds:
+  - name: countries
+    description: A mapping of 3 letter iso3 codes to country names, continent, region
+    columns:
+      - name: country_name
+        tests:
+          - unique
+          - not_null
+      - name: iso3
+        tests:
+          - unique
+          - not_null
+      - name: capital_lat
+        tests:
+          - unique
+          - not_null
+      - name: capital_lng
+        tests:
+          - unique
+          - not_null
+      - name: region
+        tests:
+          - unique
+          - not_null
+      - name: continent
+        tests:
+          - unique
+          - not_null
+
+  - name: sales_tax_rates_us_st_local
+    description: A mapping of US states, local/state/combined sales taxes
+    columns:
+      - name: state,
+        tests:
+          - unique
+          - not_null
+      - name: state_tax_rate
+        tests:
+          - unique
+          - not_null
+      - name: avg_local_tax_rate
+        tests:
+          - unique
+          - not_null
+      - name: combined_rate
+        tests:
+          - unique
+          - not_null
+
+
+
+
+
