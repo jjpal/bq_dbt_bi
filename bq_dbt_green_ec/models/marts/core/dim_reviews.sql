@@ -17,5 +17,5 @@ select
 from {{ ref('stg_reviews') }} as revs
 inner join {{ ref('stg_products') }} as prods
     on revs.product_guid = prods.product_guid
-where product_guid is not null
+where revs.product_guid is not null
 group by 1,2,3,4,5,6,7,8
