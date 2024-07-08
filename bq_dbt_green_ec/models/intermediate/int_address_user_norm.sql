@@ -13,4 +13,4 @@ select
     , current_timestamp() as insertion_timestamp_ia
 from {{ ref('stg_addresses') }}
 group by 1, 2, 3, 4, 5
-order by state_count desc
+order by user_state desc
