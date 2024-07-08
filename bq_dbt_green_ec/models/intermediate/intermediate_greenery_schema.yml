@@ -62,8 +62,8 @@ models:
       - name: insertion_timestamp_iu
         description: intermediate users_acct_age table insertion timestamp      
 
-  - name: int_address_st_agg
-    description: Contains address data and state count
+  - name: int_address_user_norm
+    description: Contains address data and user clean up
     columns:
       - name: address_guid
         description: unique user address
@@ -89,12 +89,7 @@ models:
         description: user country from address
         tests:
         - unique
-        - not_null                 
-      - name: state_count
-        description: state aggregated count
-        tests:
-        - unique
-        - not_null
+        - not_null              
       - name: insertion_timestamp_ia
         description: intermediate address table insertion timestamp
 
