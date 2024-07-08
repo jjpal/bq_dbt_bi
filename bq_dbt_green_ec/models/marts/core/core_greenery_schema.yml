@@ -80,11 +80,26 @@ models:
         tests:
           - unique
           - not_null
-      - name: user_account_age
-        description: timeframe since the user registered to greenery 
+      - name: user_account_age_sec
+        description: timeframe since the user registered to greenery -seconds
         tests:
           - unique
-          - not_null                  
+          - not_null
+      - name: user_account_age_min
+        description: timeframe since the user registered to greenery -minutes
+        tests:
+          - unique
+          - not_null
+      - name: user_account_age_hr
+        description: timeframe since the user registered to greenery -hours
+        tests:
+          - unique
+          - not_null                                
+      - name: user_account_age_day
+        description: timeframe since the user registered to greenery  -days
+        tests:
+          - unique
+          - not_null       
       - name: user_address
         description: default delivery address for the user 
         tests:
