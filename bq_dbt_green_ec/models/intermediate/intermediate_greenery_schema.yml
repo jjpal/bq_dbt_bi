@@ -231,7 +231,7 @@ models:
         tests:
           - unique
           - not_null            
-      - name: product_inventory
+      - name: product_inventory_amount
         description: product inventory on hand
         tests:
           - unique
