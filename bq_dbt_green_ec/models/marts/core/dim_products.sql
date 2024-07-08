@@ -5,14 +5,14 @@
 }}
 
 select
-    intp.product_guid
+    iprod.product_guid
     , iprod.product_name
     , iprod.product_price
     , iprod.product_inventory_amount
-    , iprod.product_ordered
+    , iprod.items_ordered
     , events.session_guid as session_guid
     , events.page_url as product_url
     , current_timestamp() as insertion_timestamp_cdp
 from {{ ref('int_order_items_prod_ord_agg') }} iprod
 left join {{ ref('stg_events') }} events
-    on intp.product_guid = e.product_guid
+    on iprod.product_guid = events.product_guid
