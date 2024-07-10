@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: Contains all page view events from greenery
+    columns: 
+      - name: user_guid
+        description: unique user that this event is associated with
+        tests:
+          - unique
+          - not_null
+      - name: page_view_id
+        description: unique event on the platform
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        description: type of event (add_to_cart, checkout, page_view, package_shipped) in order workflow
+        tests:
+          - unique
+          - not_null	 
+      - name: page_url
+        description: URL that the event happened on
+        tests:
+          - unique
+          - not_null
+      - name: session_guid
+        description: unique ID of each browsing session on the platform which can contain many events
+        tests:
+          - unique
+          - not_null       
+      - name: events_created_at_utc    
+        description: timestamp of the event
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_pfpv
+        description: orders table insertion timestamp       	            		
