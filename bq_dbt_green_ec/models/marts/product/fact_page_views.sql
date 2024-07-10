@@ -11,7 +11,6 @@ with event_views_per_session as (
         , event_type
         , page_url
         , session_guid
-        , user_guid 
         , events_created_at_utc as viewed_at_utc
         , current_timestamp() as insertion_timestamp_pfpv
     from {{ ref('stg_events') }}
