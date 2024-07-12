@@ -24,4 +24,4 @@ select
     , current_timestamp() as insertion_timestamp_cdu
 from {{ ref('int_users_acct_age') }} as i_users
 left join {{ ref('int_address_user_norm') }} as i_addr
-on i_users.user_address_guid = i_addr.address_guid
+    on i_users.user_address_guid = i_addr.address_guid
