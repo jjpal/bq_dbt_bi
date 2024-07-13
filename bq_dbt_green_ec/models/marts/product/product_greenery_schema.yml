@@ -35,7 +35,7 @@ models:
           - unique
           - not_null
       - name: insertion_timestamp_pfpv
-        description: orders table insertion timestamp       	            		
+        description: table insertion timestamp       	            		
 
   - name: fact_user_session_product
     description: contains all pageview events from greenery
@@ -56,5 +56,49 @@ models:
           - unique
           - not_null
       - name: insertion_timestamp_pfusp
-        description: orders table insertion timestamp       	            		
+        description: table insertion timestamp
+
+      - name: prodcut_funnel
+        description: contains product event total sessions and session flow/conversion rate
+        columns: 
+      - name: total_sessions
+        description: total_sessions of the different web session events
+        tests:
+          - unique
+          - not_null
+      - name:  page_views
+        description: unique not nulll page_views event type
+        tests:
+          - unique
+          - not_null
+      - name: add_to_carts
+        description: unique not nulll add_to cart event type
+        tests:
+          - unique
+          - not_null
+      - name: checkouts
+        description: unique not nulll checkout event type
+        tests:
+          - unique
+          - not_null                    
+      - name: page_view_flow
+        description: landing to product page view conversion
+        tests:
+          - unique
+          - not_null
+      - name:  view_cart_flow 
+        description: from page_view to add_to_cart flow conversion rate
+        tests:
+          - unique
+          - not_null
+      - name: cart_checkout_flow
+        description: from add_to_cart to checkout flow conversion rate
+        tests:
+          - unique
+          - not_null
+      - name: page_view_checkout_flow
+        description: from landing - product page views to checkout conversion rate
+        tests:
+          - unique
+          - not_null               	            		
 
