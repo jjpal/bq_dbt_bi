@@ -252,23 +252,13 @@ models:
         tests:
           - unique
           - not_null    
-      - name: discount
-        description: absolute dollar amount that is given off with the code 
-        tests:
-          - unique
-          - not_null    
-      - name: promo_status
-        description: the promo code that details if active or disabled
-        tests:
-          - unique
-          - not_null    
       - name: product_guid
         description: unique product UUID on platform 
         tests:
           - unique
           - not_null    
-      - name: quantity 
-        description: number of units of the product in this order 
+      - name: items_ordered  
+        description: number of units of the product in this order  (quantity)
         tests: 
           - unique
           - not_null   
@@ -277,8 +267,18 @@ models:
         tests:
           - unique
           - not_null
-      - name: product_inventory
+      - name: product_inventory_amount
         description: amount of inventory for product available 
+        tests:
+          - unique
+          - not_null
+      - name: discount
+        description: dollar amount that is given off with the code from staging
+        tests:
+          - unique
+          - not_null    
+      - name: promo_status
+        description: promo code that details if active or disabled from staging
         tests:
           - unique
           - not_null
