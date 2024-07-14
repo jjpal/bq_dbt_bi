@@ -2,7 +2,7 @@ version: 2
 
 seeds:
   - name: countries
-    description: A mapping of 3 letter iso3 codes to country names, continent, region
+    description: mapping of 3 letter iso3 codes to country names, continent, region
     columns:
       - name: country_name
         tests:
@@ -30,9 +30,9 @@ seeds:
           - not_null
 
   - name: sales_tax_rates_us_st_local
-    description: A mapping of US states, local/state/combined sales taxes
+    description: mapping of US states, local sales tax, state sales tax, combined sales tax
     columns:
-      - name: state,
+      - name: state
         tests:
           - unique
           - not_null
