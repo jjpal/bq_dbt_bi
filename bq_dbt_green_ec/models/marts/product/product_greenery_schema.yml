@@ -58,9 +58,9 @@ models:
       - name: insertion_timestamp_pfusp
         description: table insertion timestamp
 
-      - name: prodcut_funnel
-        description: contains product event total sessions and session flow/conversion rate
-        columns: 
+  - name: prodcut_funnel
+    description: contains product event total sessions and session flow/conversion rate
+    columns: 
       - name: total_sessions
         description: total_sessions of the different web session events
         tests:
@@ -102,3 +102,17 @@ models:
           - unique
           - not_null               	            		
 
+  - name: fct_product_orders
+    description: aggregated order information
+    columns:
+      - name: product_guid
+        description: unique UUID of each product 
+        tests:
+        - not_null
+        - unique
+      - name: product_name
+        description: name of product
+        tests:
+        - not_null
+        - unique 
+        
