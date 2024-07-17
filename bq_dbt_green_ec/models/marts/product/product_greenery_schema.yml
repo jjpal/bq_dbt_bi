@@ -102,7 +102,7 @@ models:
           - unique
           - not_null               	            		
 
-  - name: fct_product_orders
+  - name: fact_product_orders_pivoted
     description: aggregated order information
     columns:
       - name: product_guid
@@ -115,4 +115,35 @@ models:
         tests:
         - not_null
         - unique 
-        
+      - name: units sold
+        tests:
+        - not_null
+        - unique         
+      - name: expected_rev_no_disc_tax
+        tests:
+        - not_null
+        - unique         
+      - name: rev_with_tax_and_discount
+        tests:
+        - not_null
+        - unique 
+      - name: current_inventory
+        tests:
+        - not_null
+        - unique 
+      - name: adjusted_inventory
+        tests:
+        - not_null
+        - unique         
+      - name: num_times_ordered
+        tests:
+        - not_null
+        - unique  
+      - name: num_users_ordered
+        tests:
+        - not_null
+        - unique  
+      - name: last_ordered  
+        tests:
+        - not_null
+        - unique  
