@@ -23,13 +23,13 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-on-run-end:
-  - "grant usage on schema {{ target.schema }} to reporting"
+#on-run-end:
+#  - "grant usage on schema {{ target.schema }} to reporting"
 
-models:
-  dbt_greenery:
-    marts:
-      +post-hook: "{{ grant(role_name='reporting') }}"
+#models:
+#  dbt_greenery:
+#    marts:
+#      +post-hook: "{{ grant(role_name='reporting') }}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -64,3 +64,9 @@ models:
       product:
         +materialized: view
         +schema: product_greenery
+
+#  post-hook:
+#    - "grant select on {{ this }} to reporting"
+
+#on-run-end:
+#  - "grant usage on schema {{ schema }} to reporting"
