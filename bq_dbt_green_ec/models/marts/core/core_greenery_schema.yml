@@ -283,7 +283,7 @@ models:
           - unique
           - not_null
       - name: insertion_timestamp_cfo
-        description: events order table insertion timestamp 
+        description: table insertion timestamp 
         tests:
           - unique
           - not_null               
