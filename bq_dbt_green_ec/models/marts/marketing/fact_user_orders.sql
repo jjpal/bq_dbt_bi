@@ -13,7 +13,7 @@ select
     , fo.shipping_service
     , int_ordcstd.user_registered_on
     , int_ordcstd.user_full_name
-    , int_ordcstd.user_account_age
+    , int_ordcstd.user_account_age_day
     , du.user_email
     , du.user_phone_number
     , current_timestamp() as insertion_timestamp_mfctuo  
