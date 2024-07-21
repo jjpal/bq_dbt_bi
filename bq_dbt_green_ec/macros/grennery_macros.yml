@@ -11,3 +11,16 @@ macros:
         type: timestamp
         description: second timestamp input
 
+  - name: quote_literal
+    description: address single double quotes       
+    arguments:
+      - name: value
+        type: string
+        description: quoted_string 
+
+  - name: grant_role
+    description: grant usage and select privileges to role_name
+    arguments:
+      - name: role_name
+        type: string
+        description: the name of the role to grant to
