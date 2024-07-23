@@ -13,6 +13,6 @@ select
     , events.session_guid as session_guid
     , events.page_url as product_url
     , current_timestamp() as insertion_timestamp_cdp
-from {{ ref('int_order_items_prod_ord_agg') }} iprod
+from {{ ref('int_order_items_prod') }} iprod
 left join {{ ref('stg_events') }} events
     on iprod.product_guid = events.product_guid
