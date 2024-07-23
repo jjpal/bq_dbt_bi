@@ -21,7 +21,7 @@ select
     , pr.promo_status
     , current_timestamp() as insertion_timestamp_cfo
 from {{ ref('stg_orders') }} as ord
-left join {{ ref('int_order_items_prod_ord_agg') }} as op
+left join {{ ref('int_order_items_prod') }} as op
     on ord.order_guid = op.order_guid
 left join {{ ref('stg_promos') }} pr
     on ord.promo_guid = pr.promo_guid    
