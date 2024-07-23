@@ -17,7 +17,7 @@ select
    order_guid
    , user_guid
    , address_guid
-   , count(order_guid) as number_of_orders
+   , count(order_guid) as order_count
    , orders_created_at_utc
    {%- for order_status in order_statuses['order_status'] %}
    , sum(case when order_status = {{ quote_literal(order_status) }} then 1 else 0 end) as {{ order_statuses['column_name'][loop.index0] }} 
