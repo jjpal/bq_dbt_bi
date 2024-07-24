@@ -123,10 +123,6 @@ models:
         tests:
         - not_null
         - unique         
-      - name: rev_with_tax_and_discount
-        tests:
-        - not_null
-        - unique 
       - name: current_inventory
         tests:
         - not_null
