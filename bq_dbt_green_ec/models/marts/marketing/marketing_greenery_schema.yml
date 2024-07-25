@@ -64,3 +64,17 @@ models:
         tests:
           - unique
           - not_null         
+
+- name: cust_sef_clv
+    description: contains customer/user lifetime value and customer/user segmentation
+    columns: 
+      - name: user_guid
+        description: the unique user guid 
+        tests:
+          - unique
+          - not_null
+      - name: insertion_timestamp_mcsc
+        description: table insertion timestamp 
+        tests:
+          - unique
+          - not_null           
