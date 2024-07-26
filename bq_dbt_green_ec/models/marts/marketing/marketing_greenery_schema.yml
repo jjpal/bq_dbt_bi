@@ -59,13 +59,18 @@ models:
         tests:
           - unique
           - not_null
+      - name: user_state
+        description: the user state entered for the account 
+        tests:
+          - unique
+          - not_null    
       - name: insertion_timestamp_cfo
         description: table insertion timestamp 
         tests:
           - unique
           - not_null         
 
-- name: cust_sef_clv
+  - name: cust_sef_clv
     description: contains customer/user lifetime value and customer/user segmentation
     columns: 
       - name: user_guid
