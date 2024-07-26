@@ -16,6 +16,7 @@ select
     , int_ordcstd.user_account_age_day
     , du.user_email
     , du.user_phone_number
+    , du.user_state
     , current_timestamp() as insertion_timestamp_mfctuo  
 from {{ ref('int_orders_cnt_status_time_del') }} as int_ordcstd 
 join {{ ref('fact_orders') }} as fo
