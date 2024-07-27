@@ -49,7 +49,20 @@ seeds:
           - unique
           - not_null
 
-
-
+  - name: us_states_regions_st2la
+    description: mapping of US states, abbreviation, region
+    columns:
+      - name: state
+        tests:
+          - unique
+          - not_null
+      - name: abbreviation
+        tests:
+          - unique
+          - not_null
+      - name: region
+        tests:
+          - unique
+          - not_null         
 
 
