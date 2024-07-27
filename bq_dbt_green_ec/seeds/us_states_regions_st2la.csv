@@ -1,0 +1,53 @@
+State,Abbreviation,Region
+Alaska,AK,West
+Maine,ME,Northeast
+Vermont,VT,Northeast
+New Hampshire,NH,Northeast
+Washington,WA,West
+Idaho,ID,West
+Montana,MT,West
+North Dakota,ND,Midwest
+Minnesota,MN,Midwest
+Illinois,IL,Midwest
+Wisconsin,WI,Midwest
+Michigan,MI,Midwest
+New York,NY,Northeast
+Rhode Island,RI,Northeast
+Massachusetts,MA,Northeast
+Oregon,OR,West
+Nevada,NV,West
+Wyoming,WY,West
+South Dakota,SD,Midwest
+Iowa,IA,Midwest
+Indiana,IN,Midwest
+Ohio,OH,Midwest
+Pennsylvania,PA,Northeast
+New Jersey,NJ,Northeast
+Connecticut,CT,Northeast
+California,CA,West
+Utah,UT,West
+Colorado,CO,West
+Nebraska,NE,Midwest
+Missouri,MO,Midwest
+Kentucky,KY,South
+West Virginia,WV,South
+Virginia,VA,South
+Maryland,MD,South
+Delaware,DE,South
+Arizona,AZ,West
+New Mexico,NM,West
+Kansas,KS,Midwest
+Arkansas,AR,South
+Tennessee,TN,South
+North Carolina,NC,South
+South Carolina,SC,South
+District of Columbia,DC,South
+Oklahoma,OK,South
+Louisiana,LA,South
+Mississippi,MS,South
+Alabama,AL,South
+Georgia,GA,South
+Hawaii,HI,West
+Texas,TX,South
+Florida,FL,South
+Puerto Rico,PR,South
