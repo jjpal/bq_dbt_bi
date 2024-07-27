@@ -19,6 +19,7 @@ select
     , op.product_inventory_amount
     , pr.discount
     , pr.promo_status
+    , {{ delivery_status('estimated_delivery_at_utc', 'delivered_at_utc')}} as delivery_status
     , current_timestamp() as insertion_timestamp_cfo
 from {{ ref('stg_orders') }} as ord
 left join {{ ref('int_order_items_prod') }} as op
