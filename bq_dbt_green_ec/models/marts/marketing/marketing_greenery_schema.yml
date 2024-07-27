@@ -83,3 +83,17 @@ models:
         tests:
           - unique
           - not_null           
+
+  - name: delivery_shipsrv_status_agg 
+    description: contains customer/user lifetime value and customer/user segmentation
+    columns: 
+      - name: shipping_service
+        description: company that was used for shipping 
+        tests:
+          - unique
+          - not_null 
+      - name: insertion_timestamp_mdssa
+        description: table insertion timestamp 
+        tests:
+          - unique
+          - not_null    
