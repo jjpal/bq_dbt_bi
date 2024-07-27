@@ -273,15 +273,20 @@ models:
           - unique
           - not_null
       - name: discount
-        description: dollar amount that is given off with the code from staging
+        description: dollar amount that is given off with the code 
         tests:
           - unique
           - not_null    
       - name: promo_status
-        description: promo code that details if active or disabled from staging
+        description: promo code that details if active or disabled
         tests:
           - unique
           - not_null
+      - name: delivery_status
+        description: current status of delivery for customer
+        tests:
+          - unique
+          - not_null    
       - name: insertion_timestamp_cfo
         description: table insertion timestamp 
         tests:
