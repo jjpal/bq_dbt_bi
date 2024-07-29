@@ -70,8 +70,8 @@ models:
           - unique
           - not_null         
 
-  - name: cust_sef_clv
-    description: contains customer/user lifetime value and customer/user segmentation
+  - name: user_segm_ulv
+    description: contains user lifetime value and user segmentation
     columns: 
       - name: user_guid
         description: the unique user guid 
@@ -85,7 +85,7 @@ models:
           - not_null           
 
   - name: delivery_shipsrv_status_agg 
-    description: contains customer/user lifetime value and customer/user segmentation
+    description: contains aggregation of delivery_status per shipping service
     columns: 
       - name: shipping_service
         description: company that was used for shipping 
@@ -96,4 +96,25 @@ models:
         description: table insertion timestamp 
         tests:
           - unique
-          - not_null    
+          - not_null
+
+  - name: fact_user_revs_prod_ord 
+    description: contains reviews for user with user info, reviews, product, and orders
+    columns: 
+      - name: user_guid
+      - name: user_full_name
+      - name: user_email
+      - name: user_phone_number
+      - name: user_last_update_activity
+      - name: user_account_age_day
+      - name: product_name 
+      - name: product_price
+      - name: rating_review
+      - name: survey_review
+      - name: review_date
+      - name: discount
+      - name: promo_status
+      - name: items_ordered
+      - name: orders_created_at_utc   
+      - name: product_inventory_amount
+      - name: insertion_timestamp_mfurpo
