@@ -226,7 +226,12 @@ models:
         description: unique user UUID
         tests:
           - unique
-          - not_null       
+          - not_null
+      - name: order_cost    
+        description: dollar about of the items in the order
+        tests:
+          - unique
+          - not_null                         
       - name: order_total
         description: total cost of the order including shipping
         tests:
