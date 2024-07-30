@@ -8,6 +8,7 @@ select
     ord.order_guid
     , ord.promo_guid
     , ord.user_guid
+    , ord.order_cost
     , ord.order_total
     , ord.orders_created_at_utc
     , ord.tracking_guid
