@@ -231,7 +231,12 @@ models:
         description: dollar about of the items in the order
         tests:
           - unique
-          - not_null                         
+          - not_null
+      - name: shipping_cost    
+        description: cost of shipping for the order
+        tests:
+          - unique
+          - not_null                             
       - name: order_total
         description: total cost of the order including shipping
         tests:
