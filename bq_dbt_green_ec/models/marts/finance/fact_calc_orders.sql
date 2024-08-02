@@ -19,14 +19,15 @@ with calc_revenue as (
 )
 select
     fo.user_guid
-    , cr.user_name
-    , count(distinct fo.order_guid) as order_count
+    , cr.user_full_name
+    , count(distinct fo.order_guid) as order_count_agg
     , sum(fo.order_cost) as customer_cost_agg
     , sum(fo.shipping_cost) as shipping_cost_agg
     , sum(fo.order_total) as order_total_agg
     , cr.total_revenue
     , sum(fo.order_cost) / count(fo.order_guid) as average_order_value
     , sum(fo.order_cost) / count(distinct fo.orders_created_at_utc) as revenue_per_day
+    , current_timestamp() as insertion_timestamp_ffco
 from {{ ref('fact_orders') }} as fo
 left join calc_revenue as cr 
     on fo.user_guid = cr.user_guid
