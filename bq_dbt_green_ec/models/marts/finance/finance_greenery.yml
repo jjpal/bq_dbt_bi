@@ -1,16 +1,56 @@
 version: 2
 
 models:
-  - name: 
-    description: 
+  - name: fact_calc_orders
+    description: Ongoing calculations for orders
     columns: 
-      - name: 
-        description: 
+      - name: user_guid
+        description: unique user UID
         tests:
           - unique
           - not_null
-      - name: order_count
-        description: 
+      - name: user_full_name
+        description: user fullname on placed order
         tests:
           - unique
           - not_null
+      - name: order_count_agg
+        description: aggregated order count
+        tests:
+          - unique
+          - not_null  
+      - name: customer_cost_agg
+        description: aggregated user order cost
+        tests:
+          - unique
+          - not_null  
+      - name: shipping_cost_agg
+        description: aggregated shipping cost
+        tests:
+          - unique
+          - not_null
+      - name: order_total_agg
+        description: aggregated order total
+        tests:
+          - unique
+          - not_null  
+      - name: total_revenue
+        description: total amount of money generated from sales - including discounts and taxes
+        tests:
+          - unique
+          - not_null  
+      - name: average_order_value
+        description: average amount spent per order
+        tests:
+          - unique
+          - not_null   
+      - name: revenue_per_day
+        description: total amount of money generated from sales per day
+        tests:
+          - unique
+          - not_null     
+      - name: insertion_timestamp_ffco
+        description: table insertion timestamp 
+        tests:
+          - unique
+          - not_null                                              
