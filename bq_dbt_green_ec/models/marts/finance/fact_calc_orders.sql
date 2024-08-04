@@ -8,15 +8,15 @@ with calc_revenue as (
     select 
         fo.user_guid
         , du.user_full_name
-        round(sum(fo.order_total*(1-(coalesce(fo.discount, 0)/100)) * (1+coalesce(str.combined_rate, 0))), 2) as total_revenue
+        , round(sum(fo.order_total*(1-(coalesce(fo.discount, 0)/100)) * (1+coalesce(str.combined_rate, 0))), 2) as total_revenue
     from {{ ref('fact_orders') }} as fo
     left join {{ ref('dim_users') }} as du
         on fo.user_guid = du.user_guid
     left join {{ ref('sales_tax_rates_us_st_local') }} as str 
         on du.user_state = str.state
-    --where fo.promo_status = 'active'
     group by fo.user_guid, du.user_full_name
 )
+
 select
     fo.user_guid
     , cr.user_full_name
@@ -31,4 +31,4 @@ select
 from {{ ref('fact_orders') }} as fo
 left join calc_revenue as cr 
     on fo.user_guid = cr.user_guid
-group by fo.user_guid, cr.user_full_name, cr.total_revenue;
+group by fo.user_guid, cr.user_full_name, cr.total_revenue
