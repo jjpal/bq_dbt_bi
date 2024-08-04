@@ -26,6 +26,6 @@ from {{ ref('fact_orders')}} as fo
 left join {{ ref('dim_users')}} as du
     on fo.user_guid = du.user_guid
 left join {{ ref('dim_reviews')}} as dr
-    on du.user_guid = dm.user_guid
+    on du.user_guid = dr.user_guid
 group by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16        
 
