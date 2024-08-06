@@ -65,4 +65,8 @@ seeds:
           - unique
           - not_null         
 
+  - name: sales_tax_rates_us_st_local  
 
+  - name: us_states_regions_st2la   
+
+  - name: countries
