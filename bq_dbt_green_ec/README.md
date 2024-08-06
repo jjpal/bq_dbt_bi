@@ -12,8 +12,13 @@ Try running the following commands:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
+Greenery Tables
 
+<img src = "/assets/tables.png" alt="greenery_tables"/>
 
+seed tables
+
+<img src = "/assets/seeds_tables.png" alt="greenery_seed_tables"/>
 
  <!--- 
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
