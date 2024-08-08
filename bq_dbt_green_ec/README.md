@@ -12,13 +12,23 @@ Try running the following commands:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
-Greenery Tables
+dbt init: Initializes a new dbt project.
+dbt run: Runs all models within the project.
+dbt deps: Downloads dependencies listed in the packages.yml file.
 
-<img src = "/assets/tables.png" alt="greenery_tables"/>
+dbt seed: Loads csv files found in the seed-paths defined in the dbt_project.yml file.
+dbt test: Tests all tests within the project.
+dbt build: dbt run + dbt test + dbt snapshot + dbt seed (in DAG order).
 
-seed tables
+ 
+dbt docs generate: to generate the documentation for the project. 
+dbt snapshot: Executes snapshots in the snapshots-paths defined in the dbt_project.yml file.
 
-<img src = "/assets/seeds_tables.png" alt="greenery_seed_tables"/>
+
+Troubleshooing commands
+dbt compile 
+dbt debug 
+
 
  <!--- 
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
