@@ -12,6 +12,8 @@ Try running the following commands:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
+Commands
+
 - dbt init: Initializes a new dbt project.
 
 - dbt run: Runs all models within the project.
@@ -32,7 +34,9 @@ Try running the following commands:
 
 
 Troubleshooing commands
+
 dbt compile 
+
 dbt debug 
 
 
