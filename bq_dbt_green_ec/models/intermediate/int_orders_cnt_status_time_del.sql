@@ -22,7 +22,7 @@ select
    {%- for order_status in order_statuses['order_status'] %}
    , sum(case when order_status = {{ quote_literal(order_status) }} then 1 else 0 end) as {{ order_statuses['column_name'][loop.index0] }} 
    {%- endfor %} 
-   , avg(delivered_at_utc - orders_created_at_utc) as avg_delivery_time 
+   , avg(timestamp_diff(delivered_at_utc, orders_created_at_utc, hour)) as avg_delivery_time 
    , {{ time_interval('delivered_at_utc', 'orders_created_at_utc') }} as time_delivery
    , current_timestamp() as insertion_timestamp_ioa
 from {{ ref('stg_orders') }} as ords
