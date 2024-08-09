@@ -12,6 +12,6 @@ select
             else 'low value' end as customer_segment
     , current_timestamp() as insertion_timestamp_mcsc       
 from {{ ref('fact_orders') }} as fo
-join {{ ref('dim_users') }} as du
+inner join {{ ref('dim_users') }} as du
     on fo.user_guid = du.user_guid
 group by du.user_guid
