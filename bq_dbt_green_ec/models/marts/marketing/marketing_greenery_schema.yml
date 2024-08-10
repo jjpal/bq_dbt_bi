@@ -9,6 +9,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: address_guid    
+        description: UID for each unique address
+        tests:
+          - unique
+          - not_null    
       - name: order_count
         description: orders count from intermediate model
         tests:
@@ -36,11 +41,6 @@ models:
           - not_null
       - name: user_registered_on
         description: time the user created the account from intermediate model
-        tests:
-          - unique
-          - not_null
-      - name: user_full_name
-        description: the user full name for the account from intermediate model
         tests:
           - unique
           - not_null
