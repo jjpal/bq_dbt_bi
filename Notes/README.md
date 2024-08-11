@@ -9,7 +9,9 @@
 Medallion model
 
 - Bronze 
+
 - Silver 
+
 - Gold
 
 Greenery
