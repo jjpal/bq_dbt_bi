@@ -4,7 +4,7 @@
 
 <img src = "/assets/Greenery.png" alt="drawing"/>
 
-## Greenery+ tech startup delivers flowers and houseplants
+## Greenery+ tech startup sells & delivers plants, flowers, seeds, and trees
 
 ### Requirements:
 
